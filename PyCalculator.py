@@ -1,8 +1,9 @@
-#Imports
+#Import modules/packages
 from tkinter import *
 from xml.dom.pulldom import END_ELEMENT
+from calculatorfunctions import *
 
-#Instantiate
+#Instantiate the tkinter session
 root = Tk()
 root.title("Simple Calculator")
 
@@ -13,7 +14,9 @@ running_value = 0
 e = Entry(root, width=35, border=5)
 e.grid(row=0,column=0, columnspan=3, padx=10, pady=10)
 
-#Define Functions
+
+#Define necessary functions for use in calculator program
+
 def button_click(number):
     current=e.get()
     e.delete(0, END)
@@ -23,7 +26,6 @@ def button_click(number):
 def field_clear():
     e.delete(0,END)
 
-#Working on this function to store first value, then clear line
 def add_fxn():
     first_number = e.get()
     global first_num
@@ -68,7 +70,6 @@ def equal_fxn():
         total = first_num / second_number
     e.delete(0,END)
     e.insert(0, total)
-    
 
 #Define buttons
 button_1 = Button(root, text="1", padx=40, pady=20, command=lambda: button_click(1))
