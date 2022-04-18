@@ -1,7 +1,5 @@
 #Import modules/packages
 from tkinter import *
-from xml.dom.pulldom import END_ELEMENT
-from calculatorfunctions import *
 
 #Instantiate the tkinter session
 root = Tk()
